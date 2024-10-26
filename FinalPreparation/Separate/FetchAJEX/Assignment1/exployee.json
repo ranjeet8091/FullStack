@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "designation": "Software Engineer",
+      "department": "IT"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "designation": "Project Manager",
+      "department": "Management"
+    }
+  ]
+  

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Show Employee details</button>
+    <div id="container"></div>
+</body>
+<script>
+    const btn=document.querySelector("#btn")
+    
+    btn.addEventListener("click", async ()=>{
+         data= await fetch("exployee.json")
+        let json=await data.json()
+        console.log(json);
+        Show(json);
+    })
+
+    function Show(data)
+    {
+        let container=document.querySelector("#container");
+
+        data.forEach(element => {
+            const div=document.createElement("div");
+            div.style.border="2px solid black";
+            div.style.margin="20px";
+            div.style.padding="10px";
+            ///
+
+            let name =document.createElement("h2");
+             name.innerHTML=element.name;
+              
+             let designation =document.createElement("h3");
+             designation.innerHTML=element.designation;
+
+             let depart =document.createElement("p");
+             depart.innerHTML=element.department;
+
+             div.append(name,designation,depart);
+
+             container.append(div);
+
+        });
+        
+    }
+</script>
+</html>

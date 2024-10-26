@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check You Are Exist or not </title>
+</head>
+<body>
+    <label for="search">Enter Your UID :</label>
+    <input type="text" name="search" id="search">
+    <button type="submit" id="btn">Search</button>
+
+    <div id="output"></div>
+</body>
+<script>
+    const ID=document.querySelector("#search");
+    const btn=document.querySelector("#btn");
+
+    btn.addEventListener("click",()=>{
+        let id=ID.value;
+        console.log(id)
+       fetch("http://localhost:3000/data",{
+        method:"POST",
+        headers:{
+            'content-type':"application/json"
+        },
+        body:JSON.stringify({ID:id})
+       })
+       .then(res=>res.json())
+       .then(data=>{
+        let container=document.querySelector("#output")
+        container.innerHTML=""
+        let div=document.createElement("div")
+         div.style.border="2px solid black"
+        div.style.margin="20px"
+        div.style.padding="10px"
+        if(data.msg)
+       {
+         let msg=document.createElement("h2");
+         msg.innerHTML=data.msg
+         container.append(msg)
+       }
+       else
+       {
+         let name=document.createElement("h1")
+         name.innerHTML=data.name;
+
+         let ID=document.createElement("h2")
+         ID.innerHTML=data.ID;
+
+         let Depart=document.createElement("h3")
+         Depart.innerHTML=data.Depart;
+
+         
+         let Designation=document.createElement("h4")
+         Designation.innerHTML=data.Designation;
+
+         container.append(name,ID,Depart,Designation)
+       }
+       })
+    })
+</script>
+</html>

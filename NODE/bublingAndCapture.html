@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: red;
+            border:2px solid black;
+            padding:20px;
+        }
+        div{
+            background-color: rgb(255, 255, 255);
+            border:2px solid black;
+            padding:20px;
+        }
+        p{
+            background-color: rgb(251, 110, 110);
+            border:2px solid black;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    body
+    <div>
+        div
+        <p>paragraph</p>
+    </div>
+    <script>
+        document.querySelector('html').addEventListener('click',function(){
+            console.log('HTML Event triggered')
+        },{capture:true})
+
+        document.querySelector('body').addEventListener('click',function(e){
+            //e.stopPropagation();
+            console.log('body Event triggered')
+        },{capture:true})
+
+        document.querySelector('div').addEventListener('click',function(e){
+            // e.stopPropagation();
+            console.log('div Event triggered')
+        },{capture:true})
+
+        document.querySelector('p').addEventListener('click',function(e){
+            // e.stopPropagation();
+            console.log('P Event triggered')
+        },{capture:true})
+    </script>
+</body>
+</html>

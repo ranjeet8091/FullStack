@@ -1,0 +1,2 @@
+1) create html page link this with css and js file and file also have a img
+2) handle all this file and request with http request

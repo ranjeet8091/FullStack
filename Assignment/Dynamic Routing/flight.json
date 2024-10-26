@@ -1,0 +1,10 @@
+[
+    {"source":"delhi" , "destination":"bombay","flight_id":1101},
+    
+    {"source":"delhi" , "destination":"bombay","flight_id":1102},
+    
+    {"source":"pune" , "destination":"banglore","flight_id":1201}
+    ,
+    
+    {"source":"pune" , "destination":"chandigarh","flight_id":1111}
+]

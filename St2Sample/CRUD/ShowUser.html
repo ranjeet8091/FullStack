@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="userPage"></div>
+
+    <script>
+        async function fetchUsers() {
+
+            const response = await fetch("/getUsers");
+            const data = await response.json();
+
+            let container = document.querySelector("#userPage");
+
+            data.forEach(element => {
+                let divEach = document.createElement("div");
+                divEach.innerHTML = `
+                        <h2>User Name: ${element.user}</h2>
+                        <h3>Email ID: ${element.email}</h3>
+                        <form action="/deleteUser" method="POST">
+                            <input type="hidden" name="userID" value="${element._id}">
+                            <input type="submit" value="Delete User">
+                        </form>
+
+                        <form action="/updateUser" method="POST">
+                            <input type="hidden" name="user" value="${element._id}"> <br>
+                            <input type="submit" value="upadate User">
+                        </form>
+                    `;
+                container.appendChild(divEach);
+            });
+
+        }
+
+        window.onload = fetchUsers;
+    </script>
+
+</body>
+
+</html>

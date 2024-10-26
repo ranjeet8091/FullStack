@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbaord</title>
+</head>
+<body>
+    <h1>You are at dashboard</h1>
+    <button><a href="Logout">Logout</a></button>
+      <% if(data) {%>
+        <% data.forEach(ele=>{ %>
+           <div>
+            <h2><%=`${ele.username}`%></h2>
+             <form action="deleteUser" method="post">
+              <input type="hidden" name="UserID" value=<%=ele._id%>>
+              <input type="submit" value="Delete">
+             </form>
+
+             <form action="update" method="post">
+              <input type="hidden" name="UserID" value=<%=ele._id%>>
+              <input type="submit" value="Update">
+             </form>
+           </div>
+
+       <% }) %>
+      <%}%>
+
+</body>
+</html>

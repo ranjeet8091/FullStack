@@ -1,0 +1,4 @@
+1) Create a file server.js and users.json 
+2) in html file we have a option to select one and then show all data coorespondiing
+3) if user id exist then show all data on page . else show a message user is not exist 
+4) do this with the help of http

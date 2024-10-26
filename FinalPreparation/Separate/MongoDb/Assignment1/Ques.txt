@@ -1,0 +1,2 @@
+1) Create index.html page show on root page this page add some data and Have a button to that are added 
+2) Use storage of mongo db

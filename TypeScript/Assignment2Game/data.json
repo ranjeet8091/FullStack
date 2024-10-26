@@ -1,0 +1,29 @@
+{
+    "Beginner": [
+        "computer",
+        "javascript",
+        "html",
+        "css",
+        "basic algorithms"
+    ],
+    "Intermediate": [
+        "computer",
+        "javascript",
+        "html",
+        "css",
+        "data structures",
+        "API integration",
+        "basic algorithms"
+    ],
+    "Expert": [
+        "computer",
+        "javascript",
+        "html",
+        "css",
+        "data structures",
+        "algorithms",
+        "API design",
+        "advanced algorithms",
+        "system architecture"
+    ]
+}

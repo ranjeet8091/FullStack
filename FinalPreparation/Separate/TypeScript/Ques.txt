@@ -1,0 +1,15 @@
+Quest 1)  create a function that can calculate the tax on  income and return only number.
+if(income is greater then 50k then 2.3 else 2.2)
+
+Quest 2) type narrow -> a function used to double the income of the person . person can pass the income in string or number both
+
+Quest 3) type alis -> create a type for a object . object can also include function
+
+        a) Write a type for an object that also have optional property
+
+Quest 4) Write a function that can can accept string and number
+
+quest 5)Write two types and use inetrsection this two type then use it
+
+Question 6) create a  class ranjeet print all the details of of ranjeet after instaiation
+Question7 7) implement interface in any class

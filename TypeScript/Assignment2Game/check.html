@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Word Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .word {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        input.letter-input {
+            width: 20px;
+            font-size: 18px;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .guess-section {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="game-container">
+        <h1>Guess the Word Game</h1>
+        <p>Guess the missing letter(s) in the word:</p>
+        <div id="word-container"></div>
+
+        <button id="submit-guess" onclick="checkGuess()">Submit Guess</button>
+        <button id="next-word" onclick="nextWord()" style="display:none;">Next Word</button>
+
+        <p id="result"></p>
+        <p id="score">Score: 0</p>
+        <p id="attempts">Attempts left: 3</p>
+    </div>
+
+
+    <script>
+        
+
+
+
+        let words = ["COMPUTER", "DRIVER", "JAVASCRIPT", "BOOTSTRAP", "PYTHON"];
+        let randomIndex = Math.floor(Math.random() * words.length);
+        let selectedWord = words[randomIndex];
+        let maxAttempts = 3;
+        let attempts = maxAttempts;
+        let correctGuesses = 0;
+        let totalGuesses = 0;
+        let score = 0;
+
+        function displayWord() {
+            let wordContainer = document.getElementById("word-container");
+            wordContainer.innerHTML = "";
+
+            let letters = selectedWord.split(
+                '');
+            let numToHide = Math.floor(Math.random() * (letters.length - 1)) + 1;
+
+            for (let i = 0; i < letters.length; i++) {
+                if (Math.random() > 0.5) {
+                    let input = document.createElement('input');
+                    input.setAttribute('type', 'text');
+                    input.setAttribute('maxlength', '1');
+                    input.setAttribute('class', 'letter-input');
+                    input.setAttribute('id', 'letter-' + i);
+                    wordContainer.appendChild(input);
+                } else {
+                    let span = document.createElement('span');
+                    span.textContent = letters[i];
+                    wordContainer.appendChild(span);
+                }
+            }
+        }
+
+        function checkGuess() {
+            const inputs = document.querySelectorAll(".letter-input");
+            let correct = true;
+            let correctCount = 0;
+
+            inputs.forEach(input => {
+                let index = input.id.split("-")[1];
+                console.log(input)
+                if (input.value.toUpperCase() !== selectedWord[index].toUpperCase()) {
+                    correct = false;
+                } else {
+                    correctCount++;
+                }
+            });
+
+            totalGuesses++;
+            let resultDiv = document.getElementById("result");
+            if (correct) {
+                correctGuesses++;
+                score = (correctGuesses / totalGuesses) * 100;
+                resultDiv.textContent = "Congratulations! You guessed the word!";
+                resultDiv.style.color = "green";
+                document.getElementById("next-word").style.display = "inline-block"; // Show Next button
+                document.getElementById("submit-guess").style.display = "none"; // Hide Submit button
+            } else {
+                attempts--;
+                document.getElementById("attempts").textContent = "Attempts left: " + attempts;
+                if (attempts === 0) {
+                    resultDiv.textContent = "No more attempts left! The word was " + selectedWord;
+                    resultDiv.style.color = "red";
+                    document.getElementById("next-word").style.display = "inline-block"; // Show Next button
+                    document.getElementById("submit-guess").style.display = "none"; // Hide Submit button
+                } else {
+                    resultDiv.textContent = "Incorrect! Try again.";
+                    resultDiv.style.color = "red";
+                }
+            }
+
+            document.getElementById("score").textContent = "Score: " + score.toFixed(2);
+
+            // Check if user wins
+            if (score >= 70) {
+                resultDiv.textContent = "Congratulations! You are a winner with a score of " + score.toFixed(2) + "%.";
+                resultDiv.style.color = "green";
+                document.getElementById("next-word").style.display = "none"; // Hide Next button if the game is over
+                document.getElementById("submit-guess").style.display = "none"; // Hide Submit button if the game is over
+            }
+        }
+
+        function nextWord() {
+            randomIndex = Math.floor(Math.random() * words.length);
+            selectedWord = words[randomIndex];
+            attempts = maxAttempts;
+            document.getElementById("attempts").textContent = "Attempts left: " + attempts;
+            document.getElementById("result").textContent = "";
+            document.getElementById("next-word").style.display = "none"; // Hide Next button
+            document.getElementById("submit-guess").style.display = "inline-block"; // Show Submit button
+            displayWord();
+        }
+
+        displayWord();
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products and Fashion</title>
+</head>
+
+<body>
+    <label for="select">Select your option</label>
+    <select name="category" id="select">
+        <option value="user">User</option>
+        <option value="fashion">Fashion</option>
+    </select>
+    <button type="button" id="btn">Search</button>
+    <div id="output"></div>
+
+</body>
+<script>
+    let btn = document.querySelector("#btn")
+    let category = document.querySelector("#select");
+    let container = document.querySelector("#output")
+    btn.addEventListener("click", () => {
+        category = category.value;
+        console.log(category)
+
+        fetch("http://localhost:3000/data", {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ category: category })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                console.log(Array.isArray(data))
+                if (data[0].stock) {
+                    data.forEach(element => {
+                        let div=document.createElement("div");
+                     div.style.border="2px solid black"
+
+                     let h1=document.createElement("h1");
+                     h1.innerHTML=element.name;
+
+                     
+                     let dec=document.createElement("h1");
+                     dec.innerHTML=element.description;
+
+                     let cate=document.createElement("h1");
+                     cate.innerHTML=element.category;
+
+                     div.append(h1,dec,cate)
+                     container.append(div)
+
+                    });
+
+
+                }
+                else if(data[0].ID){
+                    data.forEach(element => {
+                        let div=document.createElement("div");
+                     div.style.border="2px solid black"
+
+                     let h1=document.createElement("h1");
+                     h1.innerHTML=element.name;
+
+                     
+                     let depart=document.createElement("h1");
+                     depart.innerHTML=element.Depart;
+
+                     let desi=document.createElement("h1");
+                     desi.innerHTML=element.Designation;
+
+                     div.append(h1,depart,desi)
+                     container.append(div)
+
+                    });
+                }
+
+            })
+            .catch(err => console.log(err))
+
+    })
+</script>
+
+</html>

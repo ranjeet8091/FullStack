@@ -1,0 +1,26 @@
+#container {
+    background-color: green;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas: 
+        "header header header"
+        "menu Main Right"
+        "menu footer footer";
+}
+
+#id-1 {
+    grid-area: header;
+}
+#id-2 {
+    grid-area: menu;
+}
+#id-3 {
+    grid-area: Main;
+}
+#id-4 {
+    grid-area: Right;
+}
+#id-5 {
+    grid-area: footer;
+}

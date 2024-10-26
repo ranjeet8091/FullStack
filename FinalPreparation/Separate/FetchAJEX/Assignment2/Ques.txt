@@ -1,0 +1,4 @@
+1) Create a file server.js and users.json 
+2) A search button in an html file search the user id .
+3) if user id exist then show all data on page . else show a message user is not exist 
+4) do this with the help of express

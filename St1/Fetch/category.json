@@ -1,0 +1,25 @@
+{
+    "fashion":[
+        {
+            "name":"Ranjeet"
+        },
+        {
+            "name":"Sagar"
+        },
+        {
+            "name":"Vivek"
+        }
+    ],
+    
+    "product":[
+        {
+            "pname":"sunakshi"
+        },
+        {
+            "pname":"Lipika/samriti/jigyasa/neha/bhumi"
+        },
+        {
+            "pname":"usha"
+        }
+    ]
+}

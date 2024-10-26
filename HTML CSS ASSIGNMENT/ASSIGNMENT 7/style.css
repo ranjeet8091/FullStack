@@ -1,0 +1,36 @@
+body{
+    width: 90%;
+    max-width: 900px;
+    margin: 2em auto;
+    font: sans-serif;
+}
+.Item{
+ border-radius: 5px;
+ padding: 10px;
+ background-color: rgb(107,227,232);
+ border: 2px solid rgb(89,207,270);   
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    /* by default the flex-direction is row */
+    justify-content: center;
+    /* justify-content is work on main axis */
+    align-items: center;  
+    /* align-item  work on cross axis */
+    height: 500px;
+    border: 2px solid red;
+    flex-wrap: wrap;
+    /* align-content: ; */
+    /* align-content is work when flex-wrap is wrap */
+
+    /* flex-basis: ;
+    order:  ; */
+}
+.Item1{
+    font-size: 2em;
+     
+}
+.Item2{
+    align-self: flex-end;
+}

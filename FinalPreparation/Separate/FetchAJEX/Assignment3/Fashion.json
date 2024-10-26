@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Mouse",
+      "price": 25.99,
+      "description": "A smooth and responsive wireless mouse.",
+      "category": "Electronics",
+      "stock": 100
+    },
+    {
+      "id": 2,
+      "name": "Bluetooth Headphones",
+      "price": 59.99,
+      "description": "Noise-cancelling over-ear headphones with Bluetooth connectivity.",
+      "category": "Electronics",
+      "stock": 50
+    },
+    {
+      "id": 3,
+      "name": "Gaming Keyboard",
+      "price": 45.99,
+      "description": "RGB mechanical gaming keyboard with customizable keys.",
+      "category": "Electronics",
+      "stock": 75
+    },
+    {
+      "id": 4,
+      "name": "Smart Watch",
+      "price": 199.99,
+      "description": "A sleek smartwatch with fitness tracking and notifications.",
+      "category": "Wearable",
+      "stock": 30
+    },
+    {
+      "id": 5,
+      "name": "Portable Charger",
+      "price": 29.99,
+      "description": "Compact 10000mAh power bank for charging on the go.",
+      "category": "Accessories",
+      "stock": 150
+    }
+  ]
+  

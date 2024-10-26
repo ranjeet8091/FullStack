@@ -1,0 +1,4 @@
+1) Create a server file and index.html file and employee.json
+2) show index.html file on "/"
+3) create a button in index.html 
+4) on click button show all the users on page 

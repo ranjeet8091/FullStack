@@ -1,0 +1,17 @@
+[
+    {
+        "empid":1,
+        "empName":"Ranjeet Tiwari",
+        "empDept":"CSE"
+    },
+    {
+        "empid":12,
+        "empName":"Ranjeet Tiwari",
+        "empDept":"CSE"
+    },
+    {
+        "empid":123,
+        "empName":"Ranjeet Tiwari",
+        "empDept":"CSE"
+    }
+]

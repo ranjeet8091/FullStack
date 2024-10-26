@@ -1,0 +1,15 @@
+Task 1  Create a server using http  - 1marks
+Task 2  Create a index.html file showing the page with following element
+  
+  input box with search 
+ Display page at "/" Route  -- marks
+
+ Task 3 Send the data of created in Task2 using AJAX method // XHR and Fetch statement - 2marks
+ Task 4 data Handled at "/getDetails and put in employeeDetails.json
+ {
+    employeed ,
+    empname,
+    empdept
+ }
+ 
+Search the id in in employeedetails and if data exist send it in reponse

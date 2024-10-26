@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Word</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        label {
+            font-size: 1.25rem;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease-in-out;
+            font-size: 1.25rem;
+            padding: 10px 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .game-info {
+            background-color: #e9ecef;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .game-info img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="game-info">
+            <h2>Welcome to the Ultimate Word Guessing Game!</h2>
+            <p>Test your vocabulary and word-solving skills in this fun and interactive game. Choose a difficulty level to get started, and see if you can guess the word by filling in the blanks.</p>
+            <img src="./img.jpg" alt="Word Game Preview">
+        </div>
+
+        <div class="form-container">
+            <h1 class="text-center text-primary mb-4">Guess the Word</h1>
+            <form action="" id="form" onsubmit="HandleSubmit(event)">
+                <div class="form-check mb-4">
+                    <input type="radio" value="Beginner" id="beg" name="label" class="form-check-input" required>
+                    <label for="beg" class="form-check-label">BEGINNER</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input type="radio" value="Medium" id="mid" name="label" class="form-check-input" required>
+                    <label for="mid" class="form-check-label">MEDIUM</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input type="radio" value="Expert" id="exp" name="label" class="form-check-input" required>
+                    <label for="exp" class="form-check-label">EXPERT</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Start Game</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Guess the Word Game. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
